@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ian Beckett</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0f0f11;
+      --surface:  #18181b;
+      --border:   #27272a;
+      --text:     #e4e4e7;
+      --muted:    #71717a;
+      --accent:   #6366f1;
+      --accent-h: #818cf8;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent-h); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    header, main, footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      padding-top: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .name {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .tagline {
+      color: var(--muted);
+      margin-top: 0.4rem;
+      font-size: 1rem;
+    }
+
+    .social {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+      font-size: 0.875rem;
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Cards ── */
+    .cards { display: flex; flex-direction: column; gap: 1rem; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.15s;
+    }
+
+    .card:hover { border-color: var(--accent); }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-title a { color: var(--text); }
+    .card-title a:hover { color: var(--accent-h); text-decoration: none; }
+
+    .badge {
+      font-size: 0.65rem;
+      font-weight: 500;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--accent) 20%, transparent);
+      color: var(--accent-h);
+      border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    }
+
+    .badge.wip {
+      background: color-mix(in srgb, #f59e0b 15%, transparent);
+      color: #fbbf24;
+      border-color: color-mix(in srgb, #f59e0b 35%, transparent);
+    }
+
+    .card-desc {
+      color: var(--muted);
+      font-size: 0.875rem;
+      margin-top: 0.4rem;
+    }
+
+    .card-meta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* ── About ── */
+    .about p {
+      color: var(--muted);
+      font-size: 0.9375rem;
+      max-width: 60ch;
+    }
+
+    .about p + p { margin-top: 0.75rem; }
+
+    /* ── Footer ── */
+    footer {
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="name">Ian Beckett</div>
+    <div class="tagline">Building tools and sharing work.</div>
+    <nav class="social">
+      <a href="https://github.com/ibeckett" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:ibeckett@gmail.com">Email</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Projects -->
+    <section>
+      <h2>Projects</h2>
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-title">
+            <a href="#">Project One</a>
+            <span class="badge">Open Source</span>
+          </div>
+          <p class="card-desc">A short description of what this project does and why it matters.</p>
+          <div class="card-meta">
+            <span>TypeScript</span>
+            <span>·</span>
+            <a href="#">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <a href="#">Project Two</a>
+            <span class="badge wip">WIP</span>
+          </div>
+          <p class="card-desc">A short description of what this project does and why it matters.</p>
+          <div class="card-meta">
+            <span>Python</span>
+            <span>·</span>
+            <a href="#">GitHub →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section>
+      <h2>Tools</h2>
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-title">
+            <a href="#">Tool Name</a>
+          </div>
+          <p class="card-desc">A short description of the tool and what problem it solves.</p>
+          <div class="card-meta">
+            <a href="#">Try it →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+      <h2>About</h2>
+      <p>
+        Hi, I'm Ian. I build tools and side projects, and I share them here.
+      </p>
+      <p>
+        Get in touch at <a href="mailto:ibeckett@gmail.com">ibeckett@gmail.com</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Ian Beckett</footer>
+
+</body>
+</html>
